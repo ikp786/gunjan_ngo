@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\IncomeController;
 use App\Http\Controllers\Admin\ExpenseController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DonerController;
 
 
 
@@ -86,6 +87,16 @@ Route::post('update/{id}',[ServiceController::class, 'update']);
 Route::get('destroy/{id}',[ServiceController::class, 'destroy']);
 });
 
+// doner
+
+Route::group(['prefix'=>'doners'], function(){
+Route::get('index',[DonerController::class, 'index']);
+Route::get('create',[DonerController::class, 'create']);
+Route::post('store',[DonerController::class, 'store']);
+Route::get('edit/{id}',[DonerController::class, 'edit']);
+Route::post('update/{id}',[DonerController::class, 'update']);
+Route::get('destroy/{id}',[DonerController::class, 'destroy']);
+});
 
 
 });
