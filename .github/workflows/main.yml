@@ -1,6 +1,6 @@
 on: 
   push:  
-    branches: main
+    branches: main 
 jobs:
     deploy_job:
      runs-on: ubuntu-latest
@@ -8,13 +8,12 @@ jobs:
      steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: 'chmod -R 777 storage/'
+      
       - name: Deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4      
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2      
         with:
-         username: ${{ secrets.FTP_USERNAME }}
-         server: ${{ secrets.FTP_SERVER }}
-         port: ${{ secrets.FTP_PORT }}
-         remote_path: '/www.premad.in/gunjan_server/'
-         sftp_only: false
-         password: ${{ secrets.FTP_PASSWORD }}
+         username: keshav@premad.in
+         server: ftp.premad.in
+         port: 21
+         server-dir: '/www.premad.in/gunjan_server/'
+         password: Keshav_250
