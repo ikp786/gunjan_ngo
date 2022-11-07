@@ -16,5 +16,5 @@ jobs:
          server: ${{ secrets.FTP_SERVER }}
          port: ${{ secrets.FTP_PORT }}
          remote_path: '/www.premad.in/gunjan_server/'
-         sftp_only: true
+         sftp_only: false
          password: ${{ secrets.FTP_PASSWORD }}
